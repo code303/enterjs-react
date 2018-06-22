@@ -5,6 +5,8 @@ export class Teams extends Component {
   constructor(props) {
     super(props);
 
+    //this.handleDelete = this.handleDelete.bind(this);
+
     this.state = {
       teams: props.teams,
     };
@@ -19,11 +21,24 @@ export class Teams extends Component {
     }, 1000);
   }
 
+  handleDelete(t) {
+    this.setState(prevState => {
+      const teams = prevState.teams.filter(team => team.name !== t.name);
+      return { teams };
+    });
+  }
+
   render() {
     console.log('RENDERING');
     return (
       <div>
-        {this.state.teams.map(team => <Team key={team.name} {...team} />)}
+        {this.state.teams.map(team => (
+          <Team
+            key={team.name}
+            {...team}
+            onDelete={obj => this.handleDelete(obj)}
+          />
+        ))}
       </div>
     );
   }
