@@ -11,7 +11,10 @@ export class Teams extends Component {
 
     setTimeout(() => {
       this.setState(prevState => {
-        return { teams: [prevState.teams[0]] };
+        const teams = [...prevState.teams];
+        teams[0].name = 'Klaus';
+
+        return { teams };
       });
     }, 1000);
   }

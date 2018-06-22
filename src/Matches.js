@@ -5,8 +5,6 @@ export class Matches extends Component {
   constructor(props) {
     super(props);
 
-    debugger;
-
     this.state = {
       matches: props.matches,
     };
