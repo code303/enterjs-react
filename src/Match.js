@@ -1,19 +1,14 @@
 import React from 'react';
+import * as moment from 'moment';
 
-const match = {
-  teamA: 'Deutschland',
-  teamB: 'Mexiko',
-  scoreA: 0,
-  scoreB: 1,
-};
-
-export const Match = () => {
+export const Match = ({ date, teamA, teamB, scoreA, scoreB }) => {
   return (
     <div>
-      <div>{match.teamA}</div>
-      <div>{match.teamB}</div>
-      <div>{match.scoreA}</div>
-      <div>{match.scoreB}</div>
+      <div>{moment(date).format('DD.MM.YYYY hh:ss')}</div>
+      <div>{teamA}</div>
+      <div>{teamB}</div>
+      <div>{scoreA}</div>
+      <div>{scoreB}</div>
     </div>
   );
 };
