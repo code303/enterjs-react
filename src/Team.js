@@ -1,10 +1,10 @@
 import React from 'react';
 
-export const Team = () => {
+export const Team = ({ name, group }) => {
   return (
     <div>
-      <div>Deutschland</div>
-      <div>Gruppe: F</div>
+      <div>{name}</div>
+      <div>Gruppe: {group}</div>
     </div>
   );
 };
