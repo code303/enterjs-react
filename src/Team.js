@@ -7,18 +7,22 @@ const Button = styled.button`
   background-color: lime;
 `;
 
+const RedButton = Button.extend`
+  background-color: red;
+`;
+
 export const Team = ({ name, group, onDelete }) => {
   return (
     <div>
       <div>{name}</div>
       <div>Gruppe: {group}</div>
-      <Button
+      <RedButton
         onClick={() => {
           onDelete({ name, group });
         }}
       >
         lösch mich
-      </Button>
+      </RedButton>
     </div>
   );
 };
