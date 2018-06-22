@@ -1,27 +1,39 @@
 import React, { Component } from 'react';
 import './App.css';
-import { Team } from './Team';
-import { Match } from './Match';
+import { Teams } from './Teams';
+import { Matches } from './Matches';
 
-const germex = {
-  date: '2018-06-17 17:00',
-  teamA: 'Deutschland',
-  teamB: 'Mexiko',
-  scoreA: '0',
-  scoreB: '012',
-};
+const matches = [
+  {
+    date: '2018-06-17 17:00',
+    teamA: 'Deutschland',
+    teamB: 'Mexiko',
+    scoreA: '0',
+    scoreB: '012',
+  },
+  {
+    date: '2018-06-23 17:00',
+    teamA: 'Deutschland',
+    teamB: 'Schweden',
+    scoreA: '5',
+    scoreB: '0',
+  },
+];
+
+const teams = [
+  { name: 'Deutschland', group: 'F' },
+  { name: 'Schweden', group: 'F' },
+  { name: 'Mexiko', group: 'F' },
+];
 
 class App extends Component {
   render() {
     return (
       <div className="App">
-        <Team name="Schweden" group="F" />
-        <Team name="Deutschland" group="F" />
-        <Team name="Mexiko" group="F" />
-        <Team name="Südkorea" group="F" />
+        <Teams teams={teams} />
         <hr />
 
-        <Match {...germex} />
+        <Matches matches={matches} />
       </div>
     );
   }
