@@ -16,11 +16,24 @@ export class Matches extends Component {
     }, 1000);*/
   }
 
+  handleDelete(m) {
+    this.setState(prevState => {
+      const matches = prevState.matches.filter(match => match.date !== m.date);
+      return { matches };
+    });
+  }
+
   render() {
     console.log('RENDERING');
     return (
       <div>
-        {this.state.matches.map(match => <Match key={match.key} {...match} />)}
+        {this.state.matches.map(match => (
+          <Match
+            key={match.date}
+            {...match}
+            onDelete={obj => this.handleDelete(obj)}
+          />
+        ))}
       </div>
     );
   }
