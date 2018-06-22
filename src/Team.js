@@ -12,8 +12,8 @@ export const Team = ({ name, group }) => {
 };
 
 Team.propTypes = {
-  name: PropTypes.string,
-  group: PropTypes.number.isRequired,
+  name: PropTypes.string.isRequired,
+  group: PropTypes.string.isRequired,
 };
 
 // don't export default () => {};
