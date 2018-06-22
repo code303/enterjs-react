@@ -3,6 +3,14 @@ import './App.css';
 import { Team } from './Team';
 import { Match } from './Match';
 
+const germex = {
+  date: '2018-06-17 17:00',
+  teamA: 'Deutschland',
+  teamB: 'Mexiko',
+  scoreA: '0',
+  scoreB: '012',
+};
+
 class App extends Component {
   render() {
     return (
@@ -12,13 +20,8 @@ class App extends Component {
         <Team name="Mexiko" group="F" />
         <Team name="Südkorea" group="F" />
         <hr />
-        <Match
-          date="2018-06-17 17:00"
-          teamA="Deutschland"
-          teamB="Mexiko"
-          scoreA="0"
-          scoreB="1"
-        />
+
+        <Match {...germex} />
       </div>
     );
   }

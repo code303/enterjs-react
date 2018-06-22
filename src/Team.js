@@ -1,5 +1,7 @@
 import React from 'react';
 
+import { PropTypes } from 'prop-types';
+
 export const Team = ({ name, group }) => {
   return (
     <div>
@@ -7,6 +9,11 @@ export const Team = ({ name, group }) => {
       <div>Gruppe: {group}</div>
     </div>
   );
+};
+
+Team.propTypes = {
+  name: PropTypes.string,
+  group: PropTypes.number.isRequired,
 };
 
 // don't export default () => {};
